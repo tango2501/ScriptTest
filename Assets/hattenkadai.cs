@@ -8,7 +8,6 @@ public class Boss
     private int hp = 100;//体力
     private int power = 25;//攻撃力
     private int mp = 53;//MP
-    private int zanmp;
     private int syouhimp = 5;
 
     //攻撃用の関数
@@ -25,14 +24,12 @@ public class Boss
     }
     public void Magic()
     {
-        if (mp > 5)
+        if (mp >= 5)
         {
-
-            while (mp > 5)
-            {
-                mp -= syouhimp;
-                Debug.Log("魔法攻撃をした。残りMPは" + mp + "。");
-            }
+            
+            mp -= syouhimp;
+            Debug.Log("魔法攻撃をした。残りMPは" + mp + "。");
+            
         }
         else
         {
@@ -58,7 +55,11 @@ public class hattenkadai : MonoBehaviour
         // 防御用の関数を呼び出す
         lastboss.Defence(3);
         //魔法攻撃用の関数を呼び出す
-        lastboss.Magic();
+        for(int i = 0; i < 11; i++)
+        {
+            lastboss.Magic();
+        }
+            
 
 
 
