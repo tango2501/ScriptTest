@@ -5,17 +5,22 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
 
-    // 「Hello」に続けて引数の文字列を表示する関数
-    void HelloName(string name)
+   // 第一引数と台に引数の値を足した値を返す関数
+   int Add(int a,int b)
     {
-        Debug.Log("Hello, " + name);
+        // 第一引数と台に引数の値を足して、変数cに代入する
+        int C = a + b;
+        // 変数cを呼び出し元の関数に返す
+        return C;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        // HelloName関数に「Unity」という引数を渡す
-        HelloName ("Unity");
+        // Add関数に「3」と「6」の引数を私ｍ返り値をnum変数に代入する
+        int num = Add(3, 6);
+        // numを表示する
+        Debug.Log(num);
         
     }
 
