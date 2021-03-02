@@ -2,26 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public class Boss
+{
+    private int hp = 100;//体力
+    private int power = 25;//攻撃力
+
+    //攻撃用の関数
+    public void Attack()
+    {
+        Debug.Log(this.power + "のダメージを与えた");
+    }
+    //防御用の関数
+    public　void Defence(int damage)
+    {
+        Debug.Log(damage + "のダメージを受けた");
+        // 残りhpを減らす
+        this.hp -= damage;
+    }
+}
 public class Test : MonoBehaviour
 {
 
-   // 第一引数と台に引数の値を足した値を返す関数
-   int Add(int a,int b)
-    {
-        // 第一引数と台に引数の値を足して、変数cに代入する
-        int C = a + b;
-        // 変数cを呼び出し元の関数に返す
-        return C;
-    }
+  
 
     // Start is called before the first frame update
     void Start()
     {
-        // Add関数に「3」と「6」の引数を私ｍ返り値をnum変数に代入する
-        int num = Add(3, 6);
-        // numを表示する
-        Debug.Log(num);
+        // Bossクラスの変数を宣言してインスタンスを代入
+        Boss lastboss = new Boss ();
+
+        //攻撃用の関数を呼び出す
+        lastboss.Attack();
+        // 防御用の関数を呼び出す
+        lastboss.Defence(3);
+
         
+
+
     }
 
     // Update is called once per frame
